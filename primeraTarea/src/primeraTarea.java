@@ -2,6 +2,15 @@ import java.util.Scanner;
 
 public class primeraTarea {
   public static void main(String[] args) {
+    System.out.println("Primaide");
+
+    for (int fila = 1; fila <= 3; fila++) {
+      for (int ast = 0; ast != fila; ast++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+
     System.out.println("Inicio del programa de tareas");
 
     System.out.println("Suma de array");
@@ -25,7 +34,7 @@ public class primeraTarea {
     }
   }
 
-  //? EJERCICIO 1 
+  // ? EJERCICIO 1
   public static boolean esPar() {
     Scanner teclado = new Scanner(System.in);
     int numero = teclado.nextInt();
@@ -38,14 +47,28 @@ public class primeraTarea {
     return true;
   }
 
-  //? EJERCICIO 2 
+  // ? EJERCICIO 2
   public static int mayorDeTresNumeros(int numero1, int numero2, int numero3) {
+
+    // !ARRAY WAY
+    int[] numeros = { numero1, numero2, numero3 };
+    int max = 0;
+
+    for (int i = 0; i < numeros.length; i++) {
+      if (max < numeros[i]) {
+        max = numeros[i];
+      }
+    }
+
+    System.out.println(max);
+
+    // !METHOD WAY
     int numeroMayor = Math.max(Math.max(numero2, numero3), numero1);
 
     return numeroMayor;
   }
 
-  //? EJERCICIO 3 
+  // ? EJERCICIO 3
   public static void tablaMultiplicar() {
     Scanner numero = new Scanner(System.in);
     int numeroEscogido = numero.nextInt();
@@ -59,7 +82,7 @@ public class primeraTarea {
 
   }
 
-  //? EJERCICIO EXTRA
+  // ? EJERCICIO EXTRA
   public static int numeroDeArrays() {
     int numero = 0;
 
@@ -72,23 +95,23 @@ public class primeraTarea {
     return numero;
   }
 
-  //? EJERCICIO 4
+  // ? EJERCICIO 4
   public static int nNumerosNaturales() {
     Scanner numero = new Scanner(System.in);
     int numeroEscogido = numero.nextInt();
     numero.close();
-    
+
     int acumulador = 0;
 
-    for(int i = 0; i <= numeroEscogido; i++){
+    for (int i = 0; i <= numeroEscogido; i++) {
       acumulador += numeroEscogido;
     }
 
     return acumulador;
   }
 
-  //? EJERCICIO 5 
-  public static void positivosNegativosCeros(){
+  // ? EJERCICIO 5
+  public static void positivosNegativosCeros() {
     int numerosPositivos = 0;
     int numerosNegativos = 0;
     int numerosCeros = 0;
@@ -129,14 +152,13 @@ public class primeraTarea {
     System.out.println("Numeros Ceros son " + numerosCeros);
   }
 
-  //? EJERCICIO 6 
-  public static void adivinaElNumero(){
-    int numeroAleatorio = (int) (Math.random()*100) + 1;
+  // ? EJERCICIO 6
+  public static void adivinaElNumero() {
+    int numeroAleatorio = (int) (Math.random() * 100) + 1;
 
     Scanner numero = new Scanner(System.in);
     int numeroEscogido = numero.nextInt();
     numero.close();
-
 
     if (numeroAleatorio != numeroEscogido) {
       while (numeroAleatorio != numeroEscogido) {
@@ -148,17 +170,15 @@ public class primeraTarea {
     System.out.println("Enhorabuena, adivinaste el número");
   }
 
-  //? EJERCICIO 7
-  public static void menuConSwitch(){
+  // ? EJERCICIO 7
+  public static void menuConSwitch() {
     System.out.println("Escoge dos números");
 
     System.out.println("Primer número:");
     Scanner numero = new Scanner(System.in);
     int numero1 = numero.nextInt();
-    numero.close();
 
     System.out.println("Segundo número:");
-    numero = new Scanner(System.in);
     int numero2 = numero.nextInt();
     numero.close();
 
@@ -168,8 +188,8 @@ public class primeraTarea {
     System.out.println("Salir = 3");
 
     Scanner opcion = new Scanner(System.in);
-    opcion.close();
     int opcionSeleccionada = opcion.nextInt();
+    opcion.close();
 
     switch (opcionSeleccionada) {
       case 1:
@@ -178,22 +198,22 @@ public class primeraTarea {
       case 2:
         System.out.println("Resultado : " + (numero1 - numero2));
         break;
-    
+
       default:
         System.out.println("Adios");
         break;
     }
   }
 
-  //? EJERCICIO 7 
-  public static void asteriscos(){
+  // ? EJERCICIO 7
+  public static void asteriscos() {
     Scanner numero = new Scanner(System.in);
     int numeroEscogido = numero.nextInt();
     numero.close();
 
-    for (int fila = 1; fila <= numeroEscogido; fila++) {
-      for (int ast = 1; fila < numeroEscogido; ast++) {
-        System.out.println("*");
+    for (int fila = 1; fila <= 3; fila++) {
+      for (int ast = 0; ast != fila; ast++) {
+        System.out.print("*");
       }
       System.out.println();
     }
