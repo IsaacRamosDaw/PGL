@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EjerciciosRepasoJava {
@@ -12,6 +13,10 @@ public class EjerciciosRepasoJava {
     // menuConSwitch();
     // asteriscos();
     // numeroDeArrays();
+    // existeDentroDelArray();
+    // invertirArray();
+    // mayorDelNumeroEnArray();
+    eliminarImparesDelArray();
   }
 
   // ? EJERCICIO 1
@@ -200,6 +205,112 @@ public class EjerciciosRepasoJava {
 
       System.out.println();
     }
+  }
+
+
+  // ? EJERCICIO 9
+  public static void existeDentroDelArray(){
+    int[] array = {1, 4, -5, 7, 10, 15, 0, 100};
+
+
+    Scanner teclado = new Scanner(System.in);
+    boolean coincidencia = false;
+
+    while (!coincidencia) { 
+      System.out.println("Inserta un número para comprobar si existe dentro del array");
+      int numero = teclado.nextInt();
+
+      for (int i : array) { 
+        if (numero == i) {
+          coincidencia = true;
+          System.out.println("Enhorabuena, el número " + numero + " existe dentro del array");
+        } 
+      }
+
+      if (!coincidencia){
+        System.out.println("Lo siento, no adivinaste el número, prueba otra vez");
+        System.out.println(" ");
+      }
+    }
+
+    teclado.close();
+  }
+
+  // ? EJERCICIO 10
+  // ! Terminar
+  public static void invertirArray(){
+    int[] numeros = new int[5];
+    Scanner numero = new Scanner(System.in);
+    int numeroEscogido = 0;
+    int aux = 0;
+    int longitudArray = numeros.length;
+
+    System.out.println("Escoge 5 números para meter en el array");
+
+    for (int i = 0; i < numeros.length; i++) {
+      System.out.println("Escoge el número " + (i + 1));  
+      numeroEscogido = numero.nextInt();
+      numeros[i] = numeroEscogido;
+    }
+
+    System.out.println("Orden del array");
+    for (int i = 0; i < numeros.length; i++) { System.out.print(numeros[i] + " "); }
+
+    for (int i = 0; i < numeros.length; i++) {
+      
+    }
+
+    System.out.println("Orden invertido del array array");
+    for (int i = 0; i < numeros.length; i++) { System.out.print(numeros[i] + " "); }
+    numero.close();
+  }
+
+  // ? EJERCICIO 11
+  public static void mayorDelNumeroEnArray(){
+    Scanner teclado = new Scanner(System.in);
+    int[] numeros = { 1, 10 ,52, 24, 97, 0, -40, -20, 33, 76, 80};
+    ArrayList<Integer> numerosMayores = new ArrayList<>();
+
+    System.out.println("Selecciona el número que comprobaremos con el array");
+    int numero = teclado.nextInt();
+
+    for (int i = 0; i < numeros.length; i++) { if(numeros[i] > numero){numerosMayores.add(numeros[i]);} }
+
+    System.out.println("Números mayores al número seleccionado");
+    for (Integer num : numerosMayores) {
+      System.out.print(num + " ");
+    }
+
+    teclado.close();
+  }
+
+  // ? EJERCICIO 12
+  public static void eliminarImparesDelArray(){
+    int[] numeros = new int[10];
+    ArrayList<Integer> numerosSinImpares = new ArrayList<>();
+    Scanner numero = new Scanner(System.in);
+    int numeroEscogido = 0;
+
+    System.out.println("Escoge 10 números para meter en el array");
+
+    for (int i = 0; i < numeros.length; i++) {
+      System.out.println("Escoge el número " + (i + 1));  
+      numeroEscogido = numero.nextInt();
+      numeros[i] = numeroEscogido;
+    }
+
+    for (int i = 0; i < numeros.length; i++) 
+    { if (numeros[i] % 2 == 0) { numerosSinImpares.add(numeros[i]); } }
+
+    for (int i = 0; i < numerosSinImpares.size(); i++) 
+    { System.out.print(numerosSinImpares.get(i) + " "); }
+    
+    numero.close();
+  }
+
+  // ? EJERCICIO 13 
+  public static void desplazarDerecha(){
+
   }
 
   // ? EJERCICIO EXTRA
